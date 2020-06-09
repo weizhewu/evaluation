@@ -14,7 +14,7 @@ import java.util.List;
  * @Date: 2020/6/8 13:35
  * @Description:
  */
-@Service
+@Service("homeChoiceService")
 public class HomeChoiceServiceImpl implements HomeChoiceService {
     @Resource
     private HomeChoiceRepository homeChoiceRepository;

@@ -7,38 +7,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * @Author: zw_w
- * @Date: 2020/6/8 8:16
- * @Description:
+ * @Date: 2020/6/9 8:50
+ * @Description: 选项
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Home {
+public class Choice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer home_id;
+    private Integer choice_id;
 
-    @Column
     @NotNull
-    private String img;
-
     @Column
-    @NotNull
-    private Integer participate;
+    private String content;
 
-    @Column
-    @NotNull
-    private String title;
-
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "home_id")
-    private List<HomeType> typeList;
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "choice_type_id")
+    private ChoiceType choiceType;
 }

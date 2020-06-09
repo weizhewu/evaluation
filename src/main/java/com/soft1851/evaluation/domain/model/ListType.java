@@ -11,34 +11,27 @@ import java.util.List;
 
 /**
  * @Author: zw_w
- * @Date: 2020/6/8 8:16
- * @Description:
+ * @Date: 2020/6/9 8:56
+ * @Description: 模块类型
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Home {
+public class ListType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer home_id;
+    private Integer list_type_id;
 
-    @Column
+    /**
+     * 类型名字
+     */
     @NotNull
-    private String img;
-
     @Column
-    @NotNull
-    private Integer participate;
-
-    @Column
-    @NotNull
-    private String title;
-
+    private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "home_id")
-    private List<HomeType> typeList;
-
+    @JoinColumn(name = "list_type_id")
+    private List<com.soft1851.evaluation.domain.model.List> lists;
 }

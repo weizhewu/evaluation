@@ -7,38 +7,29 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * @Author: zw_w
- * @Date: 2020/6/8 8:16
- * @Description:
+ * @Date: 2020/6/9 8:54
+ * @Description: 每个选项的类型
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Home {
+public class ChoiceType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer home_id;
+    private Integer choice_type_id;
 
-    @Column
+    /**
+     * 0 文本
+     * 1 单选按钮
+     * 2 多选按钮
+     */
     @NotNull
-    private String img;
-
     @Column
-    @NotNull
-    private Integer participate;
-
-    @Column
-    @NotNull
-    private String title;
-
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "home_id")
-    private List<HomeType> typeList;
+    private Integer status;
 
 }

@@ -1,5 +1,6 @@
 package com.soft1851.evaluation.repository;
 
+import com.soft1851.evaluation.util.CsvUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -8,16 +9,16 @@ import javax.annotation.Resource;
 
 /**
  * @Author: zw_w
- * @Date: 2020/6/8 11:10
+ * @Date: 2020/6/9 9:04
  * @Description:
  */
 @SpringBootTest
-class HomeRepositoryTest {
+class ListRepositoryTest {
     @Resource
-    private HomeRepository homeRepository;
+    private ListRepository listRepository;
     @Test
-    void test(){
-        System.out.println(homeRepository.getByHomeId(1));
+    void test() throws Exception {
+        listRepository.saveAll(CsvUtil.getAll());
     }
 
 }

@@ -11,34 +11,40 @@ import java.util.List;
 
 /**
  * @Author: zw_w
- * @Date: 2020/6/8 8:16
- * @Description:
+ * @Date: 2020/6/9 8:48
+ * @Description: 每个小模块
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Home {
+public class One {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer home_id;
+    private Integer one_id;
 
-    @Column
+    /**
+     * 每个小模块的题目
+     */
     @NotNull
-    private String img;
-
     @Column
-    @NotNull
-    private Integer participate;
+    private String question;
 
+    /**
+     * 是否多选、单选、选填
+     */
+    @NotNull
     @Column
-    @NotNull
-    private String title;
+    private Integer status;
 
+    @NotNull
+    @Column
+    private Integer list111;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "home_id")
-    private List<HomeType> typeList;
+    @JoinColumn(name = "one_id")
+    private List<Choice> list;
+
 
 }
