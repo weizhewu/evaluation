@@ -38,10 +38,6 @@ public class One {
     @Column
     private Integer status;
 
-    @NotNull
-    @Column
-    private Integer list111;
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "one_id")
     private List<Choice> list;

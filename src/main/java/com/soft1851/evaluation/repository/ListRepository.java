@@ -2,6 +2,7 @@ package com.soft1851.evaluation.repository;
 
 import com.soft1851.evaluation.domain.model.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  * @Author: zw_w
@@ -9,4 +10,25 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Description:
  */
 public interface ListRepository extends JpaRepository<List,Integer> {
+    /**
+     * 首页展示20条数据
+     * @return
+     */
+    @Query(value="select * from list where type = 0 limit 0,20", nativeQuery = true)
+    java.util.List<List> findHome();
+
+    /**
+     * 疫情防控模块100条数据
+     * @return
+     */
+    @Query(value="select * from list where type = 1 limit 0,100", nativeQuery = true)
+    java.util.List<List> findSpecial();
+
+    /**
+     * 根据title模糊查询
+     * @param title
+     * @return
+     */
+    @Query(value = "select l from List l where l.title like %?1%")
+    java.util.List<List> findByTitle(String title);
 }

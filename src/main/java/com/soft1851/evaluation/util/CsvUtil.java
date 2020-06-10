@@ -89,10 +89,10 @@ public class CsvUtil {
 
     public static void main(String[] args) throws Exception {
 //        System.out.println(CsvUtil.getContent("C:\\Users\\Administrator\\Desktop\\新建文件夹\\2.csv",3));
-        System.out.println(CsvUtil.getAll().size());
+//        System.out.println(CsvUtil.getAll().size());
 //        String str = "abcdefg";
 //        System.out.println("截取最后一个字符串生成的新字符串为: " + str.substring(1,str.length()-1));
-        System.out.println(CsvUtil.getQuestion().size());
+        System.out.println(CsvUtil.getQuestion());
     }
 }
 

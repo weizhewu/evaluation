@@ -12,8 +12,8 @@ import java.util.List;
  * @Date: 2020/6/8 13:46
  * @Description:
  */
-//@RestController
-//@RequestMapping(value = "/api/homeChoice/")
+@RestController
+@RequestMapping(value = "/api/homeChoice/")
 public class HomeChoiceController {
     @Resource
     private HomeChoiceService homeChoiceService;

@@ -102,6 +102,7 @@ public class JsoupUtil {
         return result;
     }
 
+
     public static void main(String[] args) throws Exception {
 //        System.out.println(JsoupUtil.getContent("https://www.wenjuan.com/lib_detail_full/5e4ceef6a320fc6fd5c68585"));
 //        List<String> urlList = new ArrayList<>();
@@ -116,15 +117,15 @@ public class JsoupUtil {
 //        }
 //        System.out.println(tem);
 //        System.out.println(JsoupUtil.getQuestion(CsvUtil.getQuestion()));
-//        List<String> list = JsoupUtil.getAnswer("https://www.wenjuan.com/lib_detail_full/5ed75d5ba320fc93811c2fe1");
-//        for (int i = 0; i < list.size() ; i++){
-//            System.out.println(list.get(i));
-//        }
-        String s3 = "总则编、无权编、合同编、人格权编、婚姻家庭编、继承编和侵权责任编七编 总则编、无权编、亲属编、继承编四编";
-        String [] spString = s3.split("\\s+");
-        for(String ss : spString){
-            System.out.println(ss);
+        List<String> list = JsoupUtil.getAnswer("https://www.wenjuan.com/lib_detail_full/5ed75d5ba320fc93811c2fe1");
+        for (int i = 0; i < list.size() ; i++){
+            System.out.println(list.get(i));
         }
+//        String s3 = "总则编、无权编、合同编、人格权编、婚姻家庭编、继承编和侵权责任编七编 总则编、无权编、亲属编、继承编四编";
+//        String [] spString = s3.split("\\s+");
+//        for(String ss : spString){
+//            System.out.println(ss);
+//        }
     }
 
 }

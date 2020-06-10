@@ -48,7 +48,6 @@ class OneRepositoryTest {
                     One one = One.builder()
                             .question(question)
                             .status(status)
-                            .list111(i+1)
                             .build();
                     oneRepository.save(one);
 //                    System.out.println(i);
