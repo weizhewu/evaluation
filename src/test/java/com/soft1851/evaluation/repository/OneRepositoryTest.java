@@ -25,7 +25,7 @@ class OneRepositoryTest {
     @Test
     void test() throws Exception {
         List<String> urls = CsvUtil.getQuestion();
-        for (int i = 0;i < urls.size() ; i++){
+        for (int i = 378;i < urls.size() ; i++){
             List<String> questions = JsoupUtil.getContent(urls.get(i));
             for (int j = 0; j < questions.size(); j++){
                 String question = questions.get(j);
@@ -48,6 +48,7 @@ class OneRepositoryTest {
                     One one = One.builder()
                             .question(question)
                             .status(status)
+                            .tem(i+1)
                             .build();
                     oneRepository.save(one);
 //                    System.out.println(i);
@@ -59,4 +60,16 @@ class OneRepositoryTest {
 
     }
 
-}
+    @Test
+    void test1() throws Exception {
+        List<String> urls = CsvUtil.getQuestion();
+        List<String> questions = JsoupUtil.getContent(urls.get(2));
+        for (int j = 0; j < questions.size(); j++) {
+            String question = questions.get(j);
+            System.out.println(question);
+
+        }
+    }
+
+
+    }

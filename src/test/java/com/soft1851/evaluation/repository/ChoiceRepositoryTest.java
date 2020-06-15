@@ -34,11 +34,13 @@ class ChoiceRepositoryTest {
                 for (int m = 0;m < choices.length; m++){
                     Choice choice = Choice.builder()
                             .content(choices[m])
+                            .tem(index)
                             .build();
                     choiceRepository.save(choice);
-                    System.out.println(choice);
+                    System.out.println("当前index:"+index);
                 }
             }
+            System.out.println("当前i："+i);
         }
     }
 
@@ -49,6 +51,18 @@ class ChoiceRepositoryTest {
             System.out.println("index：");
             index ++;
             System.out.println(index);
+        }
+    }
+
+    @Test
+    void test2() throws Exception {
+        int index = 0;
+        List<String> urls = CsvUtil.getQuestion();
+        List<String> answers = JsoupUtil.getAnswer(urls.get(2));
+        for (int j = 0;j < answers.size();j++){
+            index ++ ;
+            String answer = answers.get(j);
+            System.out.println(answer);
         }
     }
 

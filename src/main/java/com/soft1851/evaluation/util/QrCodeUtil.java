@@ -3,9 +3,7 @@ package com.soft1851.evaluation.util;
  import java.awt.image.BufferedImage;
  import java.io.ByteArrayOutputStream;
  import java.io.File;
- import java.io.FileOutputStream;
  import java.io.IOException;
- import java.io.OutputStream;
  import java.nio.file.Path;
  import java.text.DateFormat;
  import java.text.SimpleDateFormat;
@@ -30,8 +28,9 @@ package com.soft1851.evaluation.util;
 
 /**
  * 自定义二维码
+ * @author Administrator
  */
-public class QRcodeZxingUtil {
+public class QrCodeUtil {
 
     /**
      * 定义日期格式
@@ -53,7 +52,7 @@ public class QRcodeZxingUtil {
      *
      * @param content 二维码内容
      */
-    public static String generateQRcodePic(String content) {
+    public static String generateQRCodepic(String content) {
 
         Hashtable<EncodeHintType, Object> hints = new Hashtable<EncodeHintType, Object>();
         hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
@@ -169,7 +168,7 @@ public class QRcodeZxingUtil {
     public static void main(String[] args) {
 
         // 生成二维码，直接写到本地
-        System.out.println(generateQRcodePic(CONTENT));
+        System.out.println(generateQRCodepic(CONTENT));
 
 //        // 测试二维码信息解析
 //        String filepath = "D:\\DEV_ENV" + File.separator + "image" + File.separator + sf.format(new Date())

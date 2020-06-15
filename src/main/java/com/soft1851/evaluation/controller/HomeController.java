@@ -2,10 +2,7 @@ package com.soft1851.evaluation.controller;
 
 import com.soft1851.evaluation.common.ResponseResult;
 import com.soft1851.evaluation.service.HomeService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -20,7 +17,7 @@ public class HomeController {
     @Resource
     private HomeService homeService;
     @PostMapping(value = "homeId")
-    public ResponseResult getByHomeId(@RequestParam int homeId){
+    public ResponseResult getByHomeId(@PathVariable int homeId){
         return homeService.getById(homeId);
     }
 

@@ -27,6 +27,10 @@ public class Choice {
     @Column
     private String content;
 
+    @NotNull
+    @Column
+    private Integer tem;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "choice_type_id")
     private ChoiceType choiceType;

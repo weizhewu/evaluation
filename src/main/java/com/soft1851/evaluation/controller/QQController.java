@@ -49,7 +49,7 @@ public class QQController {
      * @throws Exception
      */
     @PostMapping(value = "/getQQCode")
-    public String getCode() throws Exception {
+    public StringBuilder getCode(){
         // 拼接url
         StringBuilder url = new StringBuilder();
         url.append("https://graph.qq.com/oauth2.0/authorize?");
@@ -57,14 +57,13 @@ public class QQController {
         url.append("&client_id=101513767");
         // 回调地址 ,回调地址要进行Encode转码
         // 转码
-        url.append("&redirect_uri=http://127.0.0.1:8080/QQLogin");
+        url.append("&.n");
         url.append("&state=ok");
         // HttpClientUtils.get(url.toString(), "UTF-8");
         System.out.println(url.toString());
 //        model.addAttribute("url", url);
 //        return "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101513767&redirect_uri=http://127.0.0.1:8080/QQLogin&state=ok";
-        return url.toString();
-
+        return url;
     }
 
 

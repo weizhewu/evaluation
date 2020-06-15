@@ -15,6 +15,6 @@ public interface HomeChoiceRepository extends JpaRepository<HomeChoice,Integer> 
      * @param choiceId int
      * @return int
      */
-    @Query(value="select * from home_choice where home_choice_id = ?1", nativeQuery = true)
+    @Query(value="select code from home_choice where home_choice_id = ?1", nativeQuery = true)
     int getCodeByHomeChoiceId(Integer choiceId);
 }

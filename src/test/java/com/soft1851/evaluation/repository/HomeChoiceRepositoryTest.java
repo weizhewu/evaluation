@@ -23,7 +23,7 @@ class HomeChoiceRepositoryTest {
 
     @Test
     void getCodeByHomeChoiceId() {
-        System.out.println(homeChoiceRepository.getCodeByHomeChoiceId(1));
+        System.out.println(homeChoiceRepository.getCodeByHomeChoiceId(100));
     }
 
     @Test

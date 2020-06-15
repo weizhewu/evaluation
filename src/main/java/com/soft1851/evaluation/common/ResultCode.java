@@ -11,7 +11,9 @@ public enum ResultCode {
 
     DATA_NULL(20001,"查无此数据"),
     /* 各种异常的处理：30001-39999 */
-    NPE(30001,"空指针异常");
+    NPE(30001,"空指针异常"),
+    /* 数据层错误：40001-49999 */
+    QrCode_FAIL(40001,"二维码生成失败");
 
     private Integer code;
 
