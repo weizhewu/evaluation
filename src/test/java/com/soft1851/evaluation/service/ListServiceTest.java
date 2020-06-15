@@ -34,6 +34,6 @@ class ListServiceTest {
 
     @Test
     void findByListId() {
-        System.out.println(listService.findByListId(5));
+        System.out.println(listService.findByListId(2));
     }
 }

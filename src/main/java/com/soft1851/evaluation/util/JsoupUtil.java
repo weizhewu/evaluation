@@ -117,7 +117,7 @@ public class JsoupUtil {
 //        }
 //        System.out.println(tem);
 //        System.out.println(JsoupUtil.getQuestion(CsvUtil.getQuestion()));
-        List<String> list = JsoupUtil.getAnswer("https://www.wenjuan.com/lib_detail_full/5ed75d5ba320fc93811c2fe1");
+        List<String> list = JsoupUtil.getContent("https://www.wenjuan.com/lib_detail_full/5e342724a320fc092a7707e9");
         for (int i = 0; i < list.size() ; i++){
             System.out.println(list.get(i));
         }

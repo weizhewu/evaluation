@@ -36,6 +36,10 @@ public class Home {
     @NotNull
     private String title;
 
+    @Column
+    @NotNull
+    private String link;
+
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "home_id")

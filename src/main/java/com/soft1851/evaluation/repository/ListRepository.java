@@ -31,4 +31,12 @@ public interface ListRepository extends JpaRepository<List,Integer> {
      */
     @Query(value = "select l from List l where l.title like %?1%")
     java.util.List<List> findByTitle(String title);
+
+    /**
+     * 根据id查询list
+     * @param id
+     * @return
+     */
+    @Query(value="select * from list where list_id = ?1", nativeQuery = true)
+    List findByList_id(Integer id);
 }

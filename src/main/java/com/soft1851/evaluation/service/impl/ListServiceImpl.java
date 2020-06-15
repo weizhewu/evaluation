@@ -49,7 +49,7 @@ public class ListServiceImpl implements ListService {
     public ResponseResult findByListId(Integer id) {
         com.soft1851.evaluation.domain.model.List list;
         try {
-            list = listRepository.findById(id).get();
+            list = listRepository.findByList_id(id);
         } catch (NullPointerException e){
             return ResponseResult.failure(ResultCode.NPE);
         }

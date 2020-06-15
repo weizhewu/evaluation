@@ -31,4 +31,5 @@ public class HomeChoice {
     @Column
     private Integer code;
 
+
 }

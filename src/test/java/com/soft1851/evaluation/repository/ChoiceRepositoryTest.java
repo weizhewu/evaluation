@@ -34,7 +34,6 @@ class ChoiceRepositoryTest {
                 for (int m = 0;m < choices.length; m++){
                     Choice choice = Choice.builder()
                             .content(choices[m])
-                            .tem(index)
                             .build();
                     choiceRepository.save(choice);
                     System.out.println(choice);
