@@ -10,6 +10,9 @@ public enum ResultCode {
     SUCCESS(1, "成功"),
 
     DATA_NULL(20001,"查无此数据"),
+    PHONE_NULL(20002,"手机号为空"),
+    PHONE_NOT_LEGAL(20003,"手机号不合法"),
+    USER_INSERT_FAIL(20004,"新增用户失败"),
     /* 各种异常的处理：30001-39999 */
     NPE(30001,"空指针异常"),
     /* 数据层错误：40001-49999 */

@@ -44,4 +44,10 @@ class ListRepositoryTest {
         java.util.List<List> lists = listRepository.findByTitle("大学生");
         lists.forEach(s-> System.out.println(s));
     }
+
+    @Test
+    void findHomeByKeywords() {
+        java.util.List<List> lists = listRepository.findHomeByKeywords("大学生");
+        lists.forEach(s-> System.out.println(s));
+    }
 }

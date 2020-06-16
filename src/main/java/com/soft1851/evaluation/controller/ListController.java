@@ -25,6 +25,11 @@ public class ListController {
         return listService.findHome();
     }
 
+    @PostMapping(value = "home/keywords")
+    private ResponseResult findHomeByKeywords(@PathVariable String keywords){
+        return listService.findHomeByKeywords(keywords);
+    }
+
 
     @PostMapping(value = "special")
     private ResponseResult getSpecial(){

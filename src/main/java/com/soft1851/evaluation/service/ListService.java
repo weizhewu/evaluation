@@ -16,6 +16,13 @@ public interface ListService {
     ResponseResult findHome();
 
     /**
+     * 首页模糊查询
+     * @param keywords
+     * @return
+     */
+    ResponseResult findHomeByKeywords(String keywords);
+
+    /**
      * 疫情防控模块100条数据
      * @return ResponseResult
      */

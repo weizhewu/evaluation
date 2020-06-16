@@ -16,6 +16,12 @@ public interface ListRepository extends JpaRepository<List,Integer> {
      */
     @Query(value="select * from list where type = 0 limit 0,20", nativeQuery = true)
     java.util.List<List> findHome();
+    /**
+     * 首页展示20条数据,模糊查询
+     * @return
+     */
+    @Query(value="select l from List l where l.type = 0 and l.title like %?1% ")
+    java.util.List<List> findHomeByKeywords(String keywords);
 
     /**
      * 疫情防控模块100条数据
