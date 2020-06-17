@@ -31,6 +31,13 @@ public interface ListRepository extends JpaRepository<List,Integer> {
     java.util.List<List> findSpecial();
 
     /**
+     * 模糊查询
+     * @return
+     */
+    @Query(value="select l from List l where l.type = 1 and l.title like %?1% ")
+    java.util.List<List> findSpecialByKeywords(String keywords);
+
+    /**
      * 根据title模糊查询
      * @param title
      * @return

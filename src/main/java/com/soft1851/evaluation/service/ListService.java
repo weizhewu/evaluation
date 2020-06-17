@@ -29,6 +29,13 @@ public interface ListService {
     ResponseResult findSpecial();
 
     /**
+     * 疫情防控模块模糊查询
+     * @param keywords
+     * @return
+     */
+    ResponseResult findSpecialByKeywords(String keywords);
+
+    /**
      * 根据title模糊查询
      * @param title String
      * @return ResponseResult

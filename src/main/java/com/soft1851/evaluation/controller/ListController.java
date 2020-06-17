@@ -2,10 +2,7 @@ package com.soft1851.evaluation.controller;
 
 import com.soft1851.evaluation.common.ResponseResult;
 import com.soft1851.evaluation.service.ListService;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -26,7 +23,7 @@ public class ListController {
     }
 
     @PostMapping(value = "home/keywords")
-    private ResponseResult findHomeByKeywords(@PathVariable String keywords){
+    private ResponseResult findHomeByKeywords(@RequestParam String keywords){
         return listService.findHomeByKeywords(keywords);
     }
 
@@ -34,6 +31,11 @@ public class ListController {
     @PostMapping(value = "special")
     private ResponseResult getSpecial(){
         return listService.findSpecial();
+    }
+    
+    @PostMapping(value = "special/keywords")
+    private ResponseResult findSpecialByKeywords(@RequestParam String keywords){
+        return listService.findSpecialByKeywords(keywords);
     }
 
 

@@ -46,6 +46,15 @@ public class ListServiceImpl implements ListService {
     }
 
     @Override
+    public ResponseResult findSpecialByKeywords(String keywords) {
+        List<com.soft1851.evaluation.domain.model.List> lists = listRepository.findSpecialByKeywords(keywords);
+        if (lists.size() == 0 ){
+            return ResponseResult.failure(ResultCode.DATA_NULL);
+        }
+        return ResponseResult.success(lists);
+    }
+
+    @Override
     public ResponseResult findByTitle(String title) {
         List<com.soft1851.evaluation.domain.model.List> lists = listRepository.findByTitle(title);
         if (lists.size() == 0 ){
