@@ -42,8 +42,7 @@ public class QQController {
     /**
      * 获得跳转到qq登录页的url,前台直接a连接访问
      *
-     * @author wangsong
-     * @date 2019年6月18日 下午8:29:20
+             * @author wangsong1 操操操·
 //     * @param session
      * @return
      * @throws Exception

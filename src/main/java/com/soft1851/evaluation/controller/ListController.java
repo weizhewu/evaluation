@@ -32,7 +32,7 @@ public class ListController {
     private ResponseResult getSpecial(){
         return listService.findSpecial();
     }
-    
+
     @PostMapping(value = "special/keywords")
     private ResponseResult findSpecialByKeywords(@RequestParam String keywords){
         return listService.findSpecialByKeywords(keywords);
