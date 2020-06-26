@@ -15,6 +15,7 @@ import java.util.List;
  *
  * @author：wzw
  * @create 2020-04-21 15:52
+ * @Description: 前后端分离跨域
  */
 @Configuration
 public class CorsConfig {

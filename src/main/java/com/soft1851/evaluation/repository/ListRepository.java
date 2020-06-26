@@ -18,23 +18,26 @@ public interface ListRepository extends JpaRepository<List,Integer> {
     java.util.List<List> findHome();
     /**
      * 首页展示20条数据,模糊查询
+     * @param keywords
      * @return
      */
-    @Query(value="select l from List l where l.type = 0 and l.title like %?1% ")
+    @Query(value="select * from List where type = 0 and title like concat('%',?1,'%') limit 0,10", nativeQuery = true)
     java.util.List<List> findHomeByKeywords(String keywords);
 
     /**
      * 疫情防控模块100条数据
      * @return
      */
-    @Query(value="select * from list where type = 1 limit 0,100", nativeQuery = true)
+    @Query(value="select * from list where type = 0 limit 20,40", nativeQuery = true)
+
     java.util.List<List> findSpecial();
 
     /**
      * 模糊查询
+     * @param keywords
      * @return
      */
-    @Query(value="select l from List l where l.type = 1 and l.title like %?1% ")
+    @Query(value="select * from List where type = 0 and title like concat('%',?1,'%') limit 0,10", nativeQuery = true)
     java.util.List<List> findSpecialByKeywords(String keywords);
 
     /**

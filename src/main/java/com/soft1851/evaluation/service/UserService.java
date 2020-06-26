@@ -11,7 +11,8 @@ public interface UserService {
     /**
      * 根据手机号登录
      * @param phone
+     * @param verifyCode
      * @return
      */
-    ResponseResult login(String phone);
+    ResponseResult login(String phone,String verifyCode);
 }

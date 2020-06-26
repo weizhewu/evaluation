@@ -13,10 +13,12 @@ public enum ResultCode {
     PHONE_NULL(20002,"手机号为空"),
     PHONE_NOT_LEGAL(20003,"手机号不合法"),
     USER_INSERT_FAIL(20004,"新增用户失败"),
+    SMS_WRONG(20005,"验证码错误"),
     /* 各种异常的处理：30001-39999 */
     NPE(30001,"空指针异常"),
     /* 数据层错误：40001-49999 */
-    QrCode_FAIL(40001,"二维码生成失败");
+    QrCode_FAIL(40001,"二维码生成失败"),
+    VerifyCode_FAIL(40002,"短信发送失败");
 
     private Integer code;
 

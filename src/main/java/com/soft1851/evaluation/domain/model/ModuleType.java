@@ -38,7 +38,7 @@ public class ModuleType {
 
     @Column
     @NotNull
-    private Integer moduleId1;
+    private Integer moduleId;
 
     @Column
     @NotNull
@@ -48,7 +48,8 @@ public class ModuleType {
     @NotNull
     private Integer max;
 
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "list_type_id")
+    @JoinColumn(name = "module_type_id1")
     private List<ModuleChoice> choiceList;
 }

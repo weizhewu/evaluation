@@ -48,7 +48,12 @@ public class Module {
     @Column
     private Integer status;
 
+    @NotNull
+    @Column
+    private Integer userId;
+
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "module_id")
+    @JoinColumn(name = "module_id1")
     private List<ModuleType> typeList;
 }

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @Author: zw_w
@@ -22,18 +23,19 @@ import java.sql.Timestamp;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer user_id;
+    private Integer userId;
 
 
     @Column
     @NotNull
     private String phone;
 
-    @Column
-    @NotNull
-    private String qq;
 
     @Column
     @NotNull
     private Timestamp createTime;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id1")
+    private List<Module> moduleList;
 }
